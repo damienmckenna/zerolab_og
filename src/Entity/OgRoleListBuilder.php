@@ -78,7 +78,9 @@ class OgRoleListBuilder extends DraggableListBuilder {
    * {@inheritdoc}
    */
   protected function getEntityIds() {
-    $query = $this->getStorage()->getQuery()
+    $query = $this->getStorage()
+      ->getQuery()
+      ->accessCheck()
       ->condition('group_type', $this->groupType, '=')
       ->condition('group_bundle', $this->groupBundle, '=')
       ->sort($this->entityType->getKey('weight'));

@@ -418,6 +418,7 @@ class MembershipManager implements MembershipManagerInterface {
     $query = $this->entityTypeManager
       ->getStorage('field_storage_config')
       ->getQuery()
+      ->accessCheck()
       ->condition('type', OgGroupAudienceHelperInterface::GROUP_REFERENCE);
 
     // Optionally filter group content entity types.
