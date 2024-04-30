@@ -6,10 +6,10 @@ namespace Drupal\Tests\og_ui\Functional;
 
 use Drupal\Core\Form\FormState;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\Tests\BrowserTestBase;
 use Drupal\node\Entity\NodeType;
 use Drupal\og\Og;
 use Drupal\og_ui\BundleFormAlter;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Test making a bundle a group and a group content.
@@ -21,7 +21,7 @@ class BundleFormAlterTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = ['block_content', 'entity_test', 'node', 'og_ui'];
+  protected static $modules = ['block_content', 'entity_test', 'node', 'og_ui'];
 
   /**
    * {@inheritdoc}

@@ -7,13 +7,13 @@ namespace Drupal\Tests\og\Kernel\Action;
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\Tests\og\Traits\OgMembershipCreationTrait;
-use Drupal\Tests\user\Traits\UserCreationTrait;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\og\Entity\OgRole;
 use Drupal\og\OgMembershipInterface;
 use Drupal\og\OgRoleInterface;
+use Drupal\Tests\og\Traits\OgMembershipCreationTrait;
+use Drupal\Tests\user\Traits\UserCreationTrait;
 
 /**
  * Base class for testing action plugins.
@@ -33,7 +33,7 @@ abstract class ActionTestBase extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = ['node', 'og', 'system', 'user', 'options'];
+  protected static $modules = ['node', 'og', 'system', 'user', 'options'];
 
   /**
    * An array of test users.
@@ -205,6 +205,7 @@ abstract class ActionTestBase extends KernelTestBase {
    *
    * @covers ::execute
    * @dataProvider executeProvider
+   * @doesNotPerformAssertions
    */
   abstract public function testExecute($membership);
 
